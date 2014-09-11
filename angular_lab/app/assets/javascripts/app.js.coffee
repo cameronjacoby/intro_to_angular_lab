@@ -1,8 +1,8 @@
 # define application
-TestApp = angular.module "MyApp", []
+MyApp = angular.module "MyApp", []
 
 # create controller
-TestApp.controller "IndexCtrl", ['$scope', ($scope) ->
+MyApp.controller "IndexCtrl", ['$scope', ($scope) ->
 
   $scope.movies = [{
     title: "Guardians of the Galaxy ",
@@ -45,4 +45,25 @@ TestApp.controller "IndexCtrl", ['$scope', ($scope) ->
     rating: 7.1
   }]
 
+  $scope.removeFavorite = (movie) ->
+    $scope.movies.splice($scope.movies.indexOf(movie), 1)
+
+  $scope.checked = true
+
+  $scope.submit = ->
+    $scope.text = '';
+
+  $scope.$watch "typing", ->
+    console.log $scope.typing
+    if $scope.typing == "secret" && $scope.count <= 20
+      $scope.notice = "You guessed the password!"
+      $scope.removed = true
+    else if $scope.count > 20
+      $scope.notice = "You're out of guesses! The password is secret."
+      $scope.removed = true
+
 ]
+
+MyApp.filter 'reverseTitle', ->
+  (title) ->
+    title.split("").reverse().join("")

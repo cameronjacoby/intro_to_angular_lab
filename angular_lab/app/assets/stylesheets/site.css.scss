@@ -1,3 +1,14 @@
-// Place all the styles related to the site controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  padding-top: 20px;
+}
+
+.content {
+  border-bottom: 1px solid #000;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.form-control {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
