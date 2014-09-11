@@ -1,4 +1,21 @@
-<h1>Site#index</h1>
-<p>Find me in app/views/site/index.html.erb</p>
+<div ng-controller="IndexCtrl">
 
-<h1>{{1 + 2}}</h1>
+  <h1>Favorite Movies</h1>
+  
+  <div ng-repeat ="movie in movies">
+    <ul>
+      <li>
+        INDEX: {{$index}}
+      <li>
+        ACTUAL INDEX: {{movies.indexOf(movie)}}
+      </li>
+      <li>
+        <strong>Title</strong>: {{movie.title}}
+      </li>
+      <li>
+        <strong>Rating</strong>: {{movie.rating}}
+      </li>
+    </ul>
+  </div>
+
+</div>
